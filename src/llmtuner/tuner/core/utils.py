@@ -79,7 +79,7 @@ def prepare_model_for_training(
                 output.requires_grad_(True)
             model.get_input_embeddings().register_forward_hook(make_inputs_require_grad)
 
-        model.gradient_checkpointing_enable()
+        #model.gradient_checkpointing_enable()
         model.config.use_cache = False # turn off when gradient checkpointing is enabled
         logger.info("Gradient checkpointing enabled.")
 
